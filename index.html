@@ -13,10 +13,12 @@
     <dialog id="dialog-newbook" autofocus>
       <form action="" method="dialog">
         <h2>Add Book:</h2>
-        <label for="title">Title <input type="text" id="title" name="title" /></label>
-        <label for="author">Author <input type="text" id="author" name="author" /></label>
-        <label for="pages">Pages <input type="text" id="pages" name="pages" /></label>
-        <div><label for="read">Have you read it?</label> <input type="checkbox" id="read" name="have-read" /></div>
+        <p>required inputs are marked with *</p>
+        <label for="title" aria-required="true">Title <input type="text"
+        id="title" name="title" required /></label>
+        <label for="author" aria-required="true">Author <input type="text" id="author" name="author" required/></label>
+        <label for="pages">Pages <input type="number" id="pages" name="pages" /></label>
+        <div><label for="read">Have you read it?</label> <input type="checkbox" id="read" name="have-read"/></div>
         <!-- <label for="unread"> <input type="radio" id="unread" name="have-read" /> No</label> -->
         <button id="btn-addbook" type="submit">Add</button>
       </form>
