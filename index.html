@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Library</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <button id="btn-newbook">New Book</button>
+    <div class="card-wrapper"></div>
+    <dialog id="dialog-newbook" autofocus>
+      <form action="" method="dialog">
+        <h2>Add Book:</h2>
+        <label for="title">Title <input type="text" id="title" name="title" /></label>
+        <label for="author">Author <input type="text" id="author" name="author" /></label>
+        <label for="pages">Pages <input type="text" id="pages" name="pages" /></label>
+        <fieldset>
+          <legend>Have you read it?</legend>
+          <label for="read"> <input type="radio" id="read" name="have-read" />Yes</label>
+          <label for="unread"> <input type="radio" id="unread" name="have-read" /> No</label>
+        </fieldset>
+        <button id="btn-addbook" type="submit">Add</button>
+      </form>
+    </dialog>
+  </body>
+</html>
