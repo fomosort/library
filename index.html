@@ -16,11 +16,8 @@
         <label for="title">Title <input type="text" id="title" name="title" /></label>
         <label for="author">Author <input type="text" id="author" name="author" /></label>
         <label for="pages">Pages <input type="text" id="pages" name="pages" /></label>
-        <fieldset>
-          <legend>Have you read it?</legend>
-          <label for="read"> <input type="radio" id="read" name="have-read" />Yes</label>
-          <label for="unread"> <input type="radio" id="unread" name="have-read" /> No</label>
-        </fieldset>
+        <div><label for="read">Have you read it?</label> <input type="checkbox" id="read" name="have-read" /></div>
+        <!-- <label for="unread"> <input type="radio" id="unread" name="have-read" /> No</label> -->
         <button id="btn-addbook" type="submit">Add</button>
       </form>
     </dialog>

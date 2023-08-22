@@ -13,3 +13,8 @@ card.book{
     padding: 20px;
     width: 120px;
 }
+
+form{
+    display:flex;
+    flex-direction: column;
+}

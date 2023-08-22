@@ -42,7 +42,7 @@ function displayBooks(myLibrary) {
     bookElemsObj.title.textContent = book.title;
     bookElemsObj.author.textContent = "by:" + book.author;
     bookElemsObj.pages.textContent = book.pages + " pages";
-    bookElemsObj.isRead.id = 'read-or-not'
+    bookElemsObj.isRead.id = "read-or-not";
     bookElemsObj.isRead.textContent = createReadString(book.isRead);
 
     bookElemsObj.removeBookBtn.textContent = "Remove";
@@ -61,7 +61,6 @@ function displayBooks(myLibrary) {
     Object.values(bookElemsObj).forEach((elem) => bookElem.appendChild(elem));
 
     shelf.appendChild(bookElem);
-    
   });
 }
 
@@ -70,13 +69,16 @@ function addBookDefinedInModal() {
   const authorToAdd = document.querySelector("input#author").value;
   const pagesToAdd = document.querySelector("input#pages").value;
   const isReadToAdd = document.querySelector(
-    "input[name='have-read']:checked"
-  ).id;
-  const isReadToAddString =
-    isReadToAdd.charAt(0).toUpperCase() + isReadToAdd.slice(1);
+    "input#read"
+  )
+  const isReadToAddBoolean = isReadToAdd.checked
 
-  addBookToMyLibraryObj(titleToAdd, authorToAdd, pagesToAdd, isReadToAdd);
+  // const isReadToAddString =
+  //   isReadToAdd.charAt(0).toUpperCase() + isReadToAdd.slice(1);
+
+  addBookToMyLibraryObj(titleToAdd, authorToAdd, pagesToAdd, isReadToAddBoolean);
   displayBooks(myLibrary);
+  console.log(myLibrary);
 }
 
 function removeBook() {
@@ -94,13 +96,19 @@ function createReadString(isReadBoolean) {
 function execToggleReadStatus() {
   const thisBook = myLibrary[this.parentElement.getAttribute("bookindex")];
   thisBook.toggleReadStatus();
-  this.parentElement.querySelector("#read-or-not").textContent = createReadString(thisBook.isRead)
+  this.parentElement.querySelector("#read-or-not").textContent =
+    createReadString(thisBook.isRead);
 }
 
 //IIFE + Default books for testing
 (function () {
-  addBookToMyLibraryObj("LOTR", "JRR", "22", true);
-  addBookToMyLibraryObj("Smirnoff", "John Bateman", "443", false);
+  addBookToMyLibraryObj("Grapes of Wrath", "John Steinbeck", "464", true);
+  addBookToMyLibraryObj(
+    "Think like a Programmer",
+    "Anton Spraul",
+    "260",
+    false
+  );
 
   displayBooks(myLibrary);
 })();
@@ -109,7 +117,7 @@ function execToggleReadStatus() {
 //Show Modal form for adding books
 const modalNewBook = document.querySelector("dialog#dialog-newbook");
 const btnNewBook = document.querySelector("button#btn-newbook");
-btnNewBook.addEventListener("click", () => modalNewBook.show());
+btnNewBook.addEventListener("click", () => modalNewBook.showModal());
 
 //Add book to library based on the modal form
 const btnAddBook = document.querySelector("button#btn-addbook");
