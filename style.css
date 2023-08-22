@@ -1,10 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 body{
     background-color: burlywood;
+    font-family: 'Roboto', sans-serif;
 }
 
 .card-wrapper{
     display:grid;
-    gap:25px;
+    gap:55px;
     grid-template-columns: repeat(auto-fit, 150px);
 }
 
@@ -12,10 +15,26 @@ card.book{
     background-color: green;
     border-radius: 20px;
     padding: 20px;
-    width: 120px;
+    width: 150px;
+    box-shadow: 5px 5px 5px rgb(0,0,0,0.3);
+    overflow-wrap: break-word;
+    
 }
 
 form{
     display:flex;
     flex-direction: column;
+}
+
+button{
+    appearance: none;
+    font-size: medium;
+    width: 80px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px rgb(0,0,0,0.3);
+}
+
+#btn-newbook{
+    margin-bottom:50px
 }

@@ -9,6 +9,7 @@ function Book(title, author, pages, hasRead) {
   this.toggleReadStatus = function () {
     this.isRead = !this.isRead;
   };
+  this.color = randRGB()
 }
 
 function addBookToMyLibraryObj(
@@ -60,6 +61,7 @@ function displayBooks(myLibrary) {
     //append created elements to book Element
     Object.values(bookElemsObj).forEach((elem) => bookElem.appendChild(elem));
 
+    bookElem.setAttribute("style", `background-color:${book.color}`)
     shelf.appendChild(bookElem);
   });
 }
@@ -112,6 +114,15 @@ function execToggleReadStatus() {
 
   displayBooks(myLibrary);
 })();
+
+function randRGB(){
+  const randR = Math.random()*150+1
+  const randG = Math.random()*150+1
+  const randB = Math.random()*150+1
+  const randBgColor = `rgb(${randR}, ${randG}, ${randB})`
+  return randBgColor
+}
+console.log(randRGB())
 
 // #region Event Listeners
 //Show Modal form for adding books
